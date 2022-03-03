@@ -1,5 +1,7 @@
 export default function NewsAddForm(){
     return(
-        <div></div>
+        <div>
+            Add Form
+        </div>
     )
 }

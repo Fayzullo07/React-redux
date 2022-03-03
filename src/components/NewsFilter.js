@@ -1,3 +1,7 @@
 export default function NewsFilter(){
-    return <div></div>
+    return (
+        <div>
+            Filter Contents
+        </div>
+    )
 }

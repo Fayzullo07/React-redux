@@ -5,7 +5,7 @@ import NewsList from "./NewsList";
 
 function App(props){
     return (
-      <div>
+      <div className="app">
         <NavBar/>
         <div className="content">
           <NewsList/>
