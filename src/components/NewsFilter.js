@@ -1,6 +1,11 @@
+import { useHttp } from '../hook/useHttp';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Spinner from './Spinner';
+
 import React from 'react';
 
-function NewsFilter(props) {
+function NewsFilter() {
     return (
         <div className='card shadow-lg mt-4'>
             <div className='card-body'>
