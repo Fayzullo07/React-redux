@@ -3,7 +3,7 @@ import NewsAddForm from "./NewsAddForm";
 import NewsFilter from "./NewsFilter";
 import NewsList from "./NewsList";
 
-function App(props){
+function App(){
     return (
       <div className="app">
         <NavBar/>
