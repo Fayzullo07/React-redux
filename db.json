@@ -23,12 +23,34 @@
       "name": "In the world was hot nature",
       "description": "Under attack, Ukraine's musicians become war reporters and military fundraisers",
       "category": "World News"
+    },
+    {
+      "id": "0862babd-2e1d-4856-8544-85a7c8272b12",
+      "name": "Fayzullo",
+      "description": "My first news\nUnder attack, Ukraine's musicians become war reporters and military fundraisers\n\nNews Img\nFootball news\nUnder attack, Ukraine's musicians become war reporters and military fundraisers\n\nNews Img\nXavi was train barcelona\nUnder attack, Ukraine's musicians become war reporters and military fundraisers\n\nNews Img\nIn the world was hot nature\nUnder attack, Ukraine's musicians become war reporters and military fundraisers",
+      "category": "World News"
     }
   ],
   "filters": [
-    "all",
-    "hot",
-    "sport",
-    "world"
+    {
+        "name": "all",
+        "label": "All",
+        "className": "btn-outline-dark"
+    },
+    {
+        "name": "hot",
+        "label": "Hot News",
+        "className": "btn-danger"
+    },
+    {
+        "name": "sport",
+        "label": "Sport News",
+        "className": "btn-primary"
+    },
+    {
+        "name": "world",
+        "label": "World News",
+        "className": "btn-success"
+    }
   ]
 }
