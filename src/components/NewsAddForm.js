@@ -16,7 +16,7 @@ export default function NewsAddForm(){
         e.preventDefault();
         const newNews = {id: v4(), name, description, category};
         request("http://localhost:3001/news", "POST", JSON.stringify(newNews))
-            .then(res => console.log("Success"))
+            .then(() => console.log("Success"))
             .then(dispatch(newsCreated(newNews)))
             .catch(err => console.log(err))
         
@@ -62,9 +62,9 @@ export default function NewsAddForm(){
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}>
                     <option></option>
-                    <option value="Hot News">Hot News</option>
-                    <option value="Sport News">Sport News</option>
-                    <option value="World News">World News</option>
+                    <option className="btn btn-danger" value="Hot News">Hot News</option>
+                    <option className="btn btn-primary" value="Sport News">Sport News</option>
+                    <option className="btn btn-success" value="World News">World News</option>
                 </select>
             </div>
             <button 

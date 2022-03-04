@@ -51,7 +51,7 @@ const reducer = (state = initialState, action) => {
         case "ACTIVE_FILTER_CHANCHED":
             return{
                 ...state,
-                activeFilter: action.payload === 'all' ? state.news: state.news.filter(s => s.category === action.payload)
+                filteredNews: action.payload === 'all' ? state.news: state.news.filter(s => s.category === action.payload)
             }
         default:
             return state;

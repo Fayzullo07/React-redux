@@ -6,11 +6,11 @@ import Spinner from "./Spinner";
 import Error from "./Error";
 import NewsListItem from "./NewsListItem";
 
+
 export default function NewsList() {
-    const {news, newsLoadingStatus } = useSelector(state => state);
+    const {filteredNews, filterLoadingStatus } = useSelector(state => state);
     const dispatch = useDispatch();
     const {request} = useHttp();
-    console.log(newsLoadingStatus)
 
     useEffect(() => {
        dispatch(newsFetching());
@@ -19,9 +19,9 @@ export default function NewsList() {
         .catch(() => dispatch(newsFetchingError()))
     }, [])
 
-    if(newsLoadingStatus === "loading"){
+    if(filterLoadingStatus === "loading"){
         return <Spinner/>
-    }else if (newsLoadingStatus === "error"){
+    }else if (filterLoadingStatus === "error"){
         return <Error/>
     }
 
@@ -34,7 +34,7 @@ export default function NewsList() {
         })
     }
 
-    const element = renderNewList(news)
+    const element = renderNewList(filteredNews)
 
 
     return(

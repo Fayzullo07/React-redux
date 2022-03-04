@@ -17,7 +17,7 @@ function NewsFilter() {
         dispatch(filtersFetching());
         request("http://localhost:3001/filters")
             .then(data => dispatch(filtersFetched(data)))
-            .catch(err => console.log(err))
+            .catch(() => dispatch(filtersFetchingError()))
     }, [])
 
     if(filterLoadingStatus === "loading"){
