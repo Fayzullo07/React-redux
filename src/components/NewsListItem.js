@@ -10,7 +10,7 @@ function NewsListItem({name, description, category}) {
             elementClassName = "bg-primary bg-gradient";
             break
         case "World News":
-            elementClassName = "bg-secondary bg-gradient";
+            elementClassName = "bg-success bg-gradient";
             break
         default:
             elementClassName = "bg-info bg-gradient"
@@ -22,12 +22,12 @@ function NewsListItem({name, description, category}) {
                 <p className='card-text'>{description}</p>
             </div>
             <img 
-                src='https://picsum.photos/141/94' 
+                src='https://picsum.photos/150' 
                 alt='News Img' 
                 className='imf-fluid w-25 d-inline'
                 style={{'objectFit': 'cover'}}
             />
-            <span className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light'>
+            <span className='position-absolute top-0 end-90 translate-middle badge rounded-pill bg-light'>
                 <button type='button' className='btn-close' aria-label='Close'></button>
             </span>
         </li>

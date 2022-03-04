@@ -12,7 +12,7 @@ export default function NewsAddForm(){
             <div className="mb-3">
                 <label htmlFor="category" className="form-label">Choose category of news</label>
                 <select required className="form-select" id="category" name="category">
-                    <option>News about...</option>
+                    <option></option>
                     <option value="hot">Hot News</option>
                     <option value="sport">Sport News</option>
                     <option value="world">World News</option>
