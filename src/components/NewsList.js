@@ -40,7 +40,7 @@ export default function NewsList() {
         request(`http://localhost:3001/news/${id}`, "DELETE")
             .then(data => console.log(data + "DELETED"))
             .then(dispatch(newsDeleted(id)))
-            .catch(err => console.log(err))
+            .catch(() => newsFetchingError())
     }, [])
 
     if(filterLoadingStatus === "loading"){

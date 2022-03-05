@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import {createStore, combineReducers} from 'redux';
+import {createStore, combineReducers, compose} from 'redux';
 import App from './components/App';
 import news from './redux/reducers/news';
 import filter from './redux/reducers/filter';
@@ -20,8 +20,7 @@ const enhancer = (createStore) => (...args) => {
 
   return store;
 }
-const store = createStore(combineReducers({news, filter}), enhancer);
-// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = createStore(combineReducers({news, filter}), compose( enhancer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
