@@ -5,6 +5,8 @@ import {newsFetching, newsFetched, newsFetchingError, newsDeleted} from '../redu
 import Spinner from "./Spinner";
 import Error from "./Error";
 import NewsListItem from "./NewsListItem";
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import './style/news_list.css'
 
 
 export default function NewsList() {
@@ -38,7 +40,11 @@ export default function NewsList() {
             return <h4 className="text-center mt5">New doesn't exists</h4>
         }
         return arr.map(({id, ...props}) => {
-            return <NewsListItem key={id} onDelete={() => onDelete(id)} {...props}/> 
+            return (
+                <CSSTransition key={id} timeout={500} classNames="item">
+                    <NewsListItem  onDelete={() => onDelete(id)} {...props}/> 
+                </CSSTransition>
+            )
         }).reverse()
     }
 
@@ -46,6 +52,8 @@ export default function NewsList() {
 
 
     return(
-        <ul>{element}</ul>
+        <TransitionGroup component="ul">
+            {element}
+        </TransitionGroup>
     )
 }
