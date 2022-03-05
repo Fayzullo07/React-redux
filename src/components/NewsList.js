@@ -10,7 +10,14 @@ import './style/news_list.css'
 
 
 export default function NewsList() {
-    const {filteredNews, filterLoadingStatus } = useSelector(state => state);
+    const filteredNews = useSelector((state) => {
+        if(state.activeFilter === "all"){
+            return state.news;
+        }else{
+            return state.news.filter(s => s.category === state.activeFilter)
+        }
+    })
+    const filterLoadingStatus = useSelector(state => state.filterLoadingStatus);
     const dispatch = useDispatch();
     const {request} = useHttp();
 
