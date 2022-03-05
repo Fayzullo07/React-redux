@@ -30,7 +30,8 @@ const reducer = (state = initialState, action) => {
             const newCreatedNewsList = [...state.news, action.payload];
             return{
                 ...state,
-                news: newCreatedNewsList
+                news: newCreatedNewsList,
+                filteredNews: state.activeFilter === "all" ? newCreatedNewsList : newCreatedNewsList.filter(s => s.category === state.activeFilter)
             }
         case "FILTERS_FETCHING":
             return{
@@ -51,7 +52,15 @@ const reducer = (state = initialState, action) => {
         case "ACTIVE_FILTER_CHANCHED":
             return{
                 ...state,
+                activeFilter: action.payload,
                 filteredNews: action.payload === 'all' ? state.news: state.news.filter(s => s.category === action.payload)
+            }
+        case "NEWS_DELETED":
+            const newNewList = state.news.filter(s => s.id !== action.payload);
+            return{
+                ...state,
+                news: newNewList,
+                filteredNews: state.activeFilter === "all" ? newNewList: newNewList.filter(s => s.category === state.activeFilter)
             }
         default:
             return state;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHttp } from "../hook/useHttp";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { v4 } from "uuid";
 import { newsCreated } from "../redux/action";
 
@@ -11,6 +11,7 @@ export default function NewsAddForm(){
     const [category, setCategory] = useState("");
     const dispatch = useDispatch();
     const {request} = useHttp();
+    const {filters, filterLoadingStatus} = useSelector(state => state);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
@@ -23,6 +24,21 @@ export default function NewsAddForm(){
         setName("");
         setCategory("");
         setDescrition("");
+    }
+
+    const renderFilters = (filters, status) => {
+        if(status === "loading"){
+            return <option>Loading</option>
+        }else if(status === "error"){
+            return <option>Error options</option>
+        }
+
+        if(filters && filters.length > 0){
+            return filters.map(({name, label}) => {
+                if(name === 'all') return;
+                return <option key={name} value={name}>{label}</option>
+            })
+        }
     }
 
     return(
@@ -61,10 +77,8 @@ export default function NewsAddForm(){
                     name="category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}>
-                    <option></option>
-                    <option className="btn btn-danger" value="Hot News">Hot News</option>
-                    <option className="btn btn-primary" value="Sport News">Sport News</option>
-                    <option className="btn btn-success" value="World News">World News</option>
+                    <option>Category of News</option>
+                    ]{renderFilters(filters, filterLoadingStatus)}
                 </select>
             </div>
             <button 

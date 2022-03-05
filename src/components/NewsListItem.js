@@ -1,6 +1,6 @@
 import React from 'react';
 // import bg from '../assets/bg.jpg'
-function NewsListItem({name, description, category}) {
+function NewsListItem({name, description, category, onDelete}) {
     let elementClassName;
     switch(category){
         case "Hot News":
@@ -28,7 +28,7 @@ function NewsListItem({name, description, category}) {
                 style={{'objectFit': 'cover'}}
             />
             <span className='position-absolute top-0 end-90 translate-middle badge rounded-pill bg-light'>
-                <button type='button' className='btn-close' aria-label='Close'></button>
+                <button onClick={onDelete} type='button' className='btn-close' aria-label='Close'></button>
             </span>
         </li>
     );
