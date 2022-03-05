@@ -6,18 +6,25 @@ import Spinner from "./Spinner";
 import Error from "./Error";
 import NewsListItem from "./NewsListItem";
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
+import { createSelector } from 'reselect';
 import './style/news_list.css'
 
 
 export default function NewsList() {
-    const filteredNews = useSelector((state) => {
-        if(state.activeFilter === "all"){
-            return state.news;
-        }else{
-            return state.news.filter(s => s.category === state.activeFilter)
+    const filteredNewsSelected = createSelector(
+        (state) => state.filter.activeFilter,
+        (state) => state.news.news,
+        (filter, news) => {
+            if(filter === "all"){
+                console.log("render")
+                return news;
+            }else{
+                return news.filter(s => s.category === filter)
+            }
         }
-    })
-    const filterLoadingStatus = useSelector(state => state.filterLoadingStatus);
+    )
+    const filteredNews = useSelector(filteredNewsSelected)
+    const filterLoadingStatus = useSelector(state => state.filter.filterLoadingStatus);
     const dispatch = useDispatch();
     const {request} = useHttp();
 

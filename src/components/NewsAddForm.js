@@ -11,7 +11,7 @@ export default function NewsAddForm(){
     const [category, setCategory] = useState("");
     const dispatch = useDispatch();
     const {request} = useHttp();
-    const {filters, filterLoadingStatus} = useSelector(state => state);
+    const {filters, filterLoadingStatus} = useSelector(state => state.filter);
 
     const onSubmitHandler = (e) => {
         e.preventDefault();

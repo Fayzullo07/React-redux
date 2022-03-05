@@ -9,7 +9,7 @@ import React from 'react';
 import Error from './Error';
 
 function NewsFilter() {
-    const {filters, filterLoadingStatus, activeFilter} = useSelector(state => state);
+    const {filters, filterLoadingStatus, activeFilter} = useSelector(state => state.filter);
     const dispatch = useDispatch();
     const {request} = useHttp();
 
