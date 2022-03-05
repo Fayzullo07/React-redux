@@ -25,10 +25,9 @@ const reducer = (state = initialState, action) => {
                 newsLoadingStatus: 'error'
             }
         case "NEWS_CREATED":
-            const newCreatedNewsList = [...state.news, action.payload];
             return{
                 ...state,
-                news: newCreatedNewsList,
+                news: [...state.news, action.payload],
             }
         case "FILTERS_FETCHING":
             return{
@@ -52,10 +51,9 @@ const reducer = (state = initialState, action) => {
                 activeFilter: action.payload,
             }
         case "NEWS_DELETED":
-            const newNewList = state.news.filter(s => s.id !== action.payload);
             return{
                 ...state,
-                news: newNewList,
+                news: state.news.filter(s => s.id !== action.payload),
             }
         default:
             return state;

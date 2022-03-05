@@ -44,7 +44,11 @@ export default function NewsList() {
 
     const renderNewsList = (arr) => {
         if(arr.length === 0) {
-            return <h4 className="text-center mt5">New doesn't exists</h4>
+            return (
+                <CSSTransition timeout={500} classNames="item">
+                    <h4 className="text-center mt5">New doesn't exists</h4>
+                </CSSTransition>
+            )
         }
         return arr.map(({id, ...props}) => {
             return (
