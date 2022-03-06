@@ -1,7 +1,7 @@
 import { useHttp } from "../hook/useHttp";
 import { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {newsFetching, newsFetched, newsFetchingError, newsDeleted} from '../redux/action';
+import {fetchNews, newsFetchingError, newsDeleted} from '../redux/action';
 import Spinner from "./Spinner";
 import Error from "./Error";
 import NewsListItem from "./NewsListItem";
@@ -29,10 +29,7 @@ export default function NewsList() {
     const {request} = useHttp();
 
     useEffect(() => {
-       dispatch("NEWS_FETCHING");
-       request("http://localhost:3001/news")
-        .then(data => dispatch(newsFetched(data)))
-        .catch(() => dispatch(newsFetchingError()))
+        dispatch(fetchNews(request))
     }, [])
 
 
