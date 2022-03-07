@@ -1,7 +1,7 @@
 // import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
 import {configureStore} from '@reduxjs/toolkit'
 // import ReduxThunk from 'redux-thunk';
-import news from './reducers/news';
+import news from '../components/NewsList/news_slice';
 import filter from './reducers/filter';
 import { stringMiddleware } from '../middleware/stringMiddleware';
 

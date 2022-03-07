@@ -29,18 +29,6 @@
       "name": "In the world was hot nature",
       "description": "In the world was hot natureIn the world was hot natureIn the world was hot natureIn the world was hot natureIn the world was hot natureIn the world was hot nature",
       "category": "World News"
-    },
-    {
-      "id": "e289c879-6a86-4372-978c-80be8ef48ceb",
-      "name": "In the world was hot nature",
-      "description": "ReduxThunk",
-      "category": "Sport News"
-    },
-    {
-      "id": "5129c765-e263-4c3e-80d2-c950960a586d",
-      "name": "In the world was hot nature",
-      "description": "filter(s => s.id !== action.payload)",
-      "category": ""
     }
   ],
   "filters": [

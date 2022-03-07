@@ -1,13 +1,14 @@
-import { useHttp } from "../hook/useHttp";
+import { useHttp } from "../../hook/useHttp";
 import { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {fetchNews, newsFetchingError, newsDeleted} from '../redux/action';
-import Spinner from "./Spinner";
-import Error from "./Error";
-import NewsListItem from "./NewsListItem";
+import {fetchNews } from '../../redux/action';
+import Spinner from "../Spinner";
+import Error from "../Error";
+import NewsListItem from "../NewsListItem";
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import { createSelector } from 'reselect';
-import './style/news_list.css'
+import '../style/news_list.css';
+import {newsDeleted, newsFetchingError} from './news_slice'
 
 
 export default function NewsList() {

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHttp } from "../hook/useHttp";
 import { useDispatch, useSelector } from "react-redux";
 import { v4 } from "uuid";
-import { newsCreated } from "../redux/action";
+import { newsCreated } from "./NewsList/news_slice";
 
 
 export default function NewsAddForm(){
