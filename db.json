@@ -37,9 +37,9 @@
       "category": "Sport News"
     },
     {
-      "id": "25ebb603-d0d3-4b93-aa46-2d53243d9dee",
+      "id": "5129c765-e263-4c3e-80d2-c950960a586d",
       "name": "In the world was hot nature",
-      "description": "ReduxThunk",
+      "description": "filter(s => s.id !== action.payload)",
       "category": ""
     }
   ],
