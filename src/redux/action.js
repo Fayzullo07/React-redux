@@ -1,10 +1,12 @@
+import {createAction} from '@reduxjs/toolkit';
+
 export const fetchNews = (request) => (dispatch) => {
     dispatch(newsFetching());
     request("http://localhost:3001/news")
         .then(data => dispatch(newsFetched(data)))
         .catch(() => dispatch(newsFetchingError()))
 }
-export const newsFetching = () => ({type: "NEWS_FETCHING"});
+export const newsFetching = createAction("NEWS_FETCHING");
 export const newsFetched = (news) => ({type:"NEWS_FETCHED", payload: news});
 export const newsFetchingError = () => ({type: "NEWS_FETCHING_ERROR"});
 export const newsCreated = (news) => ({type: "NEWS_CREATED", payload: news});
