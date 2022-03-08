@@ -2,7 +2,7 @@
 import {configureStore} from '@reduxjs/toolkit'
 // import ReduxThunk from 'redux-thunk';
 import news from '../components/NewsList/news_slice';
-import filter from './reducers/filter';
+import filter from '../components/Filters/filter_slice';
 import { stringMiddleware } from '../middleware/stringMiddleware';
 
   

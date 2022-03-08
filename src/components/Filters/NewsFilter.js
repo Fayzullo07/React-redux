@@ -3,8 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../Spinner';
 import classNames from 'classnames';
-import { activeFilterChanged} from '../../redux/action';
-import {filtersFetching, filtersFetched, filtersFetchingError} from './filter_slice';
+import {filtersFetching, filtersFetched, filtersFetchingError, activeFilterChanged} from './filter_slice';
 
 import React from 'react';
 import Error from '../Error';

@@ -6,7 +6,7 @@ const initialState = {
     activeFilter: 'all',
 }
 
-const newsSlice = createSlice({
+const filtersSlice = createSlice({
     name: "filters",
     initialState,
     reducers:{
@@ -17,12 +17,15 @@ const newsSlice = createSlice({
 
         },
         filtersFetchingError: state => {state.filterLoadingStatus = "error"},
+        activeFilterChanged: (state, action) => {state.activeFilter = action.payload}
+        
     }
+    
 })
 
-const {actions, reducer} = newsSlice;
+const {actions, reducer} = filtersSlice;
 export default reducer;
-export const {filtersFetching, filtersFetched, filtersFetchingError} = actions;
+export const {filtersFetching, filtersFetched, filtersFetchingError, activeFilterChanged} = actions;
 
 // const filter = (state = initialState, action) => {
 //     switch(action.type){
