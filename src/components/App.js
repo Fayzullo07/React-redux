@@ -1,6 +1,6 @@
 import NavBar from "./NavBar";
 import NewsAddForm from "./NewsAddForm";
-import NewsFilter from "./NewsFilter";
+import NewsFilter from "./Filters/NewsFilter";
 import NewsList from "./NewsList/NewsList";
 
 function App(){
