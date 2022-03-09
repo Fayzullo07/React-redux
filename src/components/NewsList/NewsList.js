@@ -1,14 +1,14 @@
 import { useHttp } from "../../hook/useHttp";
 import { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {fetchNews } from '../../redux/action';
+// import {fetchNews } from '../../redux/action';
 import Spinner from "../Spinner";
 import Error from "../Error";
 import NewsListItem from "../NewsListItem";
 import {CSSTransition, TransitionGroup} from 'react-transition-group';
 import { createSelector } from 'reselect';
 import '../style/news_list.css';
-import {newsDeleted, newsFetchingError} from './news_slice'
+import {newsDeleted, fetchNews} from './news_slice'
 
 
 export default function NewsList() {
@@ -30,7 +30,7 @@ export default function NewsList() {
     const {request} = useHttp();
 
     useEffect(() => {
-        dispatch(fetchNews(request))
+        dispatch(fetchNews())
     }, [])
 
 
@@ -38,7 +38,7 @@ export default function NewsList() {
         request(`http://localhost:3001/news/${id}`, "DELETE")
             .then(data => console.log(data + "DELETED"))
             .then(dispatch(newsDeleted(id)))
-            .catch(() => newsFetchingError())
+            .catch(() => dispatch("NEWS_FETCHING_ERROR"))
     }, [])
 
     if(filterLoadingStatus === "loading"){

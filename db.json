@@ -7,12 +7,6 @@
       "category": "Hot News"
     },
     {
-      "id": 2,
-      "name": "Football news",
-      "description": "Under attack, Ukraine's musicians become war reporters and military fundraisers",
-      "category": "Sport News"
-    },
-    {
       "id": 3,
       "name": "Xavi was train barcelona",
       "description": "Under attack, Ukraine's musicians become war reporters and military fundraisers",
@@ -22,12 +16,6 @@
       "id": 4,
       "name": "In the world was hot nature",
       "description": "Under attack, Ukraine's musicians become war reporters and military fundraisers",
-      "category": "World News"
-    },
-    {
-      "id": "c5cea49f-2032-422c-a543-938638967c3d",
-      "name": "In the world was hot nature",
-      "description": "In the world was hot natureIn the world was hot natureIn the world was hot natureIn the world was hot natureIn the world was hot natureIn the world was hot nature",
       "category": "World News"
     }
   ],
